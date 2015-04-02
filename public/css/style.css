@@ -1,0 +1,119 @@
+.main-content{
+	margin-top: 25px
+}
+
+.navbar-inverse {
+	background: #5591DF;
+	border-color: #5591DF;
+	padding: 8px;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #FFF;
+	font-weight: bold;
+	font-size: 20px;
+
+}
+
+.footer {
+	background-color: #434242;
+	margin: 56px 0 0 0;
+}
+
+.footer .container a{
+	color: #FFF;
+	text-decoration: none;
+	float: right;
+	font-style: italic;
+}
+
+.footer .container {
+	padding: 36px 15px 36px 0;
+}
+
+footer {
+   
+   height:100px;
+   width:100%;
+   background:#999;
+}
+
+.locale {
+	width: 100%;
+	margin-top: 66px;
+	background-color: gray;
+	color: #FFF;
+	padding: 1% 0 0 0;	
+	font-style: italic;
+}
+
+.dailyForecast {
+	height: 185px;
+	/*background-color: tomato;*/
+	text-align: center;
+	
+}
+
+.panel-group {
+	margin-bottom: 0;
+}
+
+.panel-group a {
+	font-size: 1.4em;
+	text-decoration: none;
+	font-weight: 400;
+}
+
+.panel-group .day {
+	
+	font-weight: 300;
+	text-decoration: none;
+
+}
+
+/*=============================*/
+/*     Weather Icons Styles    */
+/*=============================*/
+
+.wi {
+  margin: .1em auto;
+  font-size: 6em;
+}
+
+.weekly {
+  padding: 10% 10%;
+  font-size: 5em;
+  font-weight: 300;
+}
+
+
+/*=============================*/
+/*     Media Queries           */
+/*=============================*/
+
+
+@media screen and (max-width: 768px) {
+
+	.wi {
+		display: block;
+		margin: 0 auto;
+		width: 40%;
+
+	}
+
+	.col-xs-2,
+	.col-xs-3 {
+		width: 100%;
+	}
+
+	h2,
+	.panel div > p, 
+	.current-conditions div > p {
+		text-align: center;
+	}
+}
+	
+
+
+
+

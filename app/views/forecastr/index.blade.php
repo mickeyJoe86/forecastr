@@ -18,13 +18,13 @@
 
    @if(isset($alerts))
     
-        <div class="panel-group container" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel-group container alerts-body" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
             <h4 class="panel-title alert alert-danger">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   Alerts 
                  
-                    ({{count($alertid)+1}})
+                    ({{count($alertid)}})
                   
                   <i class="glyphicon glyphicon-chevron-down"></i>
                 </a>

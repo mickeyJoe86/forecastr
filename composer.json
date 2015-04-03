@@ -7,8 +7,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"guhelski/forecast-php": "dev-master",
-        "toin0u/geocoder-laravel": "0.4.*",
-        "uberboom/forecast": "dev-master"
+        "toin0u/geocoder-laravel": "0.4.*"
+        
 	},
 	"autoload": {
 		"classmap": [

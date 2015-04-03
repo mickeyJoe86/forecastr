@@ -68,7 +68,7 @@ class ForecastrController extends \BaseController {
 			$daily[$key]->icon = Forecastr::setIcons($value);
 		}
 		
-		//dd($alertid);
+		//dd($alerts);
 
 		return View::make('forecastr.index', compact('location','result',
 		'currentTemp', 'currentCondition', 'alerts', 'alertid', 'daily', 'currentPrecip', 'seticon'));

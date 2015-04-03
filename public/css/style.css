@@ -71,6 +71,11 @@ footer {
 
 }
 
+.alerts-body div p {
+	font-size: .8em;
+	margin: 0 10% 0 0;
+}
+
 /*=============================*/
 /*     Weather Icons Styles    */
 /*=============================*/

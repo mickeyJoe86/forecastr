@@ -17,15 +17,15 @@
 <!-- Begin Alerts Area-->
 
    @if(isset($alerts))
-    
+
         <div class="panel-group container alerts-body" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
             <h4 class="panel-title alert alert-danger">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Alerts 
-                 
-                    ({{count($alertid)}})
-                  
+                  Alerts
+
+                    ({{count($alerts)}})
+
                   <i class="glyphicon glyphicon-chevron-down"></i>
                 </a>
             </h4>
@@ -36,17 +36,17 @@
                 <div class="panel-body alert alert-danger">
                     @foreach($alerts as $id => $alert)
                       <div class="container">
-                        <p>{{ $alert->description }}</p> 
+                        <p>{{ $alert->description }}</p>
                         <p style="font-style:italic">(expires: {{ gmdate("D, F j, Y, g:i a", $alert->expires ) }} )</p>
                       </div>
-                      
+
                       <hr>
                     @endforeach
                 </div>
-            
-          </div>  
+
+          </div>
         </div>
-     
+
    @endif
 
 <!-- End Alerts Area-->
@@ -63,21 +63,23 @@
                 <div class="col-sm-2">
                   <i class="wi {{ $seticon }}"></i>
                 </div>
-                
-             
-              
+
+
+
                 <div class="col-sm-3">
                   <p style="font-size:32px">{{ round($currentTemp) }}&#176</p>
                   <p> and {{ $currentCondition }}</p>
                   <p>rain: {{ $currentPrecip * 100 }}&#37</p>
                 </div>
             </div>
-              
+
           </div>
-      @endif     
+      @endif
+
+      <canvas id="buyers" width="1050" height="400"></canvas>
       <!-- End Current Conditions-->
-      
-    
+
+
             <!-- Begin Weekly Forecast-->
             <div class="container">
                 <h2>Weekly Forecast</h2>
@@ -85,15 +87,15 @@
                   @if(isset($daily))
                     @foreach($daily as $id => $day)
                       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        
+
                         <div class="panel panel-default">
                           <div class="panel-heading" role="tab" id="heading{{ $id }}">
                             <h4 class="panel-title">
-                              
+
                               <a data-toggle="collapse" data-parent="#accordion{{ $id }}" href="#collapse{{ $id }}" aria-expanded="true" aria-controls="collapseOne" class="dayIcon">
                                 <span class="toggle-icon glyphicon glyphicon-plus-sign"></span>
-                                
-                                {{ gmdate("D", $day->time) }}             
+
+                                {{ gmdate("D", $day->time) }}
                               </a>
                               <span class="day">{{ gmdate("M d", $day->time) }}</span>
                             </h4>
@@ -104,37 +106,34 @@
                                 <div class="col-sm-2">
                                   <i class="weekly wi {{ $day->icon }}"></i>
                                 </div>
-                                
+
                                 <div class="col-sm-3">
-                                  <p>{{ round($day->temperatureMin) }}&#176 - {{ round($day->temperatureMax) }}&#176</p>
+                                  <p>{{ round($day->apparentTemperatureMin) }}&#176 - {{ round($day->temperatureMax) }}&#176</p>
                                   <p>{{ $day->summary }}</p>
                                   <p>rain: {{ $day->precipProbability * 100 }}&#37</p>
                                 </div>
 
                               </div>
-                              
-                              
+
+
                             </div>
                           </div>
                         </div>
-                      </div>  
+                      </div>
 
                   <!-- End Weekly Forecast-->
                     @endforeach
                   @endif
               </div>
-  
+
 
 <!-- End Main Content Area-->
     </div>
-
-
-{{--     	<iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="http://forecast.io/embed/#lat={{ $lat }}&lon={{ $lon }}&name={{ $city }}&color=#00aaff&font=Georgia&units=uk"> </iframe> --}}
-
     </div>
-
+        <script>
+            //returning data objects from controller and binding to vars for Chart.js plugin in themescripts.js
+            var hours = <?php echo json_encode($hours); ?>;
+            var rainPercent = <?php echo json_encode($hourlyRain); ?>;
+        </script>
 
 @stop
-
-
-

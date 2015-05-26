@@ -16,12 +16,14 @@
 // 	return View::make('hello');
 // });
 
-Route::get('/', 'ForecastrController@search');
+Route::get('/', array('as' => 'home', 'uses' => 'ForecastrController@search'));
 Route::post('/', 'ForecastrController@search');
 
 //Route::get('/{location}', 'ForecastrController@conditions');
 
 // Route::post('/conditions', array(
-// 	'as' => 'location_post', 
+// 	'as' => 'location_post',
 // 	'uses' => 'ForecastrController@conditions'
 // ));
+
+Route::get('/data', 'DataController@index');

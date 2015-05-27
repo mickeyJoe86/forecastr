@@ -76,6 +76,7 @@
           </div>
       @endif
 
+        <h2>Chance of Rain</h2>
       <canvas id="buyers" width="1050" height="400"></canvas>
       <!-- End Current Conditions-->
 
@@ -128,7 +129,7 @@
 
 
 <!-- End Main Content Area-->
-    </div>
+        </div>
     </div>
         <script>
             //returning data objects from controller and binding to vars for Chart.js plugin in themescripts.js

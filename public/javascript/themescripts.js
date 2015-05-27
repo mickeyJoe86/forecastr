@@ -7,12 +7,9 @@ $(document).ready(function () {
  	});
 
 	//Create new chart
-
     var buyers = document.getElementById('buyers').getContext('2d');
 
-
-
-    //define dataset variables
+    //define dataset variables label and data objects echoed from Forecastr controller
     var data = {
         labels: hours,
         datasets: [

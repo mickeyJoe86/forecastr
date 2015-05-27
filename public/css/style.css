@@ -76,6 +76,15 @@ footer {
 	margin: 0 10% 0 0;
 }
 
+.navbar-inverse .navbar-toggle {
+      border-color: #fff;
+  }
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #5591DF;
+}
+
 /*=============================*/
 /*     Weather Icons Styles    */
 /*=============================*/
@@ -90,6 +99,7 @@ footer {
   font-size: 5em;
   font-weight: 300;
 }
+
 
 
 /*=============================*/
@@ -116,6 +126,14 @@ footer {
 	.current-conditions div > p {
 		text-align: center;
 	}
+
+    i {
+        padding-left: 0.38em;
+    }
+
+    canvas {
+        padding: 0 2em 0 2em;
+    }
 }
 	
 

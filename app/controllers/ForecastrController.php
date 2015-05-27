@@ -67,17 +67,23 @@ class ForecastrController extends \BaseController {
         //Hourly rain
         $hourly = $result->hourly->data;
         $hourlyRain = array();
+        $i = 0;
         foreach($hourly as $e) {
+            if($i==24) break;
             array_push($hourlyRain, ($e->precipProbability * 100));
+            $i++;
         }
 
         //Hourly time
+        $i = 0;
         $hours = array();
         foreach($hourly as $h) {
-            array_push($hours, gmdate('g:i A', $h->time));
+            if($i==24) break;
+            array_push($hours, date('g:i A', $h->time));
+            $i++;
         }
 
-		//dd($hours);
+		//dd(date('g:i A', $result->currently->time));
 
 		return View::make('forecastr.index', compact('location','result',
 		'currentTemp', 'currentCondition', 'alerts', 'daily', 'currentPrecip', 'seticon', 'hours', 'hourlyRain'));

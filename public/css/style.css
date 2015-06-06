@@ -100,6 +100,10 @@ footer {
   font-weight: 300;
 }
 
+canvas {
+    width: 100% !important;
+
+}
 
 
 /*=============================*/
@@ -131,9 +135,7 @@ footer {
         padding-left: 0.38em;
     }
 
-    canvas {
-        padding: 0 2em 0 2em;
-    }
+
 }
 	
 

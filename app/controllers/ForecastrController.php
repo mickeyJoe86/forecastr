@@ -83,10 +83,19 @@ class ForecastrController extends \BaseController {
             $i++;
         }
 
-		//dd(date('g:i A', $result->currently->time));
+//        //Hourly Temp
+        $i = 0;
+        $hourlyTemp = array();
+        foreach($hourly as $hour) {
+            if($i==24) break;
+            array_push($hourlyTemp, round($hour->temperature));
+            $i++;
+        }
+
+		//dd($hourlyTemp);
 
 		return View::make('forecastr.index', compact('location','result',
-		'currentTemp', 'currentCondition', 'alerts', 'daily', 'currentPrecip', 'seticon', 'hours', 'hourlyRain'));
+		'currentTemp', 'currentCondition', 'alerts', 'daily', 'currentPrecip', 'seticon', 'hours', 'hourlyRain', 'hourlyTemp'));
 
 	}
 

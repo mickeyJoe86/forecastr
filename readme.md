@@ -4,8 +4,8 @@ Forecastr is an elegant PHP weather app built on Laravel and utilizes both the B
 
 Forecastr is powered by The Dark Sky [Forecast.io](https://developer.forecast.io/) API and leverages the Ghuleski PHP wrapper.  Location data is geocode using the Google Maps service provider with the [willdurand/geocoder](https://packagist.org/packages/willdurand/geocoder) package.
 
-Weather chart is generated using the [Chart.js] (http://www.chartjs.org/) jQuery plugin.
+Rain Percentage chart is generated using the [Chart.js] (http://www.chartjs.org/) jQuery plugin.
 
 ## Upcoming Features
 
-Upcoming feature include user authentication to manage favorite locations
+Upcoming features include user authentication to manage favorite locations
